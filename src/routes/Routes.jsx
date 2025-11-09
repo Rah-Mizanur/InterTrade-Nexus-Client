@@ -9,6 +9,7 @@ import Home from "../Pages/Home";
 
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "../Pages/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -29,19 +30,27 @@ const router = createBrowserRouter([
             },
             {
                 path:'/my-imports',
-                element : <MyImports></MyImports>
+                element : <PrivateRoute>
+                       <MyImports></MyImports>
+                </PrivateRoute>
             },
             {
                 path:'/my-exports',
-                element : <MyExports></MyExports>
+                element : <PrivateRoute>
+                    <MyExports></MyExports>
+                </PrivateRoute>
             },
             {
                 path:'/add-export',
-                element : <AddExport></AddExport>
+                element : <PrivateRoute>
+                    <AddExport></AddExport>
+                </PrivateRoute>
             },
             {
                 path: '/product-details/:id',
-                element: <ProductDetails></ProductDetails>
+                element: <PrivateRoute>
+                    <ProductDetails></ProductDetails>
+                </PrivateRoute>
             },
             {
                 path :'/login',

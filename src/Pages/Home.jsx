@@ -16,7 +16,7 @@ const Home = () => {
         ))}
       </div>
       <div className="flex justify-center items-center">
-        <Link className="btn btn-accent  w-30 Capitalize"> see all</Link>
+        <Link to='/all-products' className="btn btn-accent  w-30 Capitalize"> see all</Link>
       </div>
     </div>
   );
