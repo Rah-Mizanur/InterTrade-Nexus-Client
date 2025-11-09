@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
+import Profile from "./Profile";
 
 const Navbar = () => {
   return (
@@ -59,10 +60,7 @@ const Navbar = () => {
             </li>
         </ul>
       </div>
-      <div className="navbar-end gap-2">
-        <a className="btn btn-secondary">logIn</a>
-        <a className="btn  btn-accent">Register</a>
-      </div>
+     <Profile></Profile>
     </div>
   );
 };

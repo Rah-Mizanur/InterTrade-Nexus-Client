@@ -7,6 +7,9 @@ import AddExport from "../Pages/AddExport";
 import ProductDetails from "../Pages/ProductDetails";
 import Home from "../Pages/Home";
 
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -35,6 +38,14 @@ const router = createBrowserRouter([
             {
                 path: '/product-details/:id',
                 element: <ProductDetails></ProductDetails>
+            },
+            {
+                path :'/login',
+                element : <Login></Login>
+            },
+            {
+                path :"/register",
+                element: <Register></Register>
             }
         ]
     }
