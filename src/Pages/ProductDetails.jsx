@@ -12,7 +12,11 @@ const ProductDetails = () => {
   // console.log(product)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/all-products/${id}`)
+    fetch(`http://localhost:3000/all-products/${id}`,{
+         headers :{
+              authorization : `Bearer ${user.accessToken}`
+            }
+    })
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
