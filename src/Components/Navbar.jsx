@@ -29,38 +29,40 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-           <NavLink>All Products </NavLink>
+              <NavLink to="/all-products">All Products </NavLink>
             </li>
             <li>
-      <NavLink>My Imports</NavLink>
+              <NavLink to="/my-imports">My Imports</NavLink>
             </li>
             <li>
-          <NavLink>My Exports</NavLink>
+              <NavLink to="/my-exports">My Exports</NavLink>
             </li>
             <li>
-    <NavLink>Add Export</NavLink>
+              <NavLink to="/add-export">Add Export</NavLink>
             </li>
           </ul>
         </div>
-        <a className="text-accent text-xl font-bold">Inter<span className="text-secondary">Trade</span></a>
+        <a className="text-accent text-xl font-bold">
+          Inter<span className="text-secondary">Trade</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-           <li>
-           <NavLink to='/all-products'>All Products </NavLink>
-            </li>
-            <li>
-      <NavLink to='/my-imports'>My Imports</NavLink>
-            </li>
-            <li>
-          <NavLink to='/my-exports'>My Exports</NavLink>
-            </li>
-            <li>
-    <NavLink to='/add-export'>Add Export</NavLink>
-            </li>
+          <li>
+            <NavLink to="/all-products">All Products </NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-imports">My Imports</NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-exports">My Exports</NavLink>
+          </li>
+          <li>
+            <NavLink to="/add-export">Add Export</NavLink>
+          </li>
         </ul>
       </div>
-     <Profile></Profile>
+      <Profile></Profile>
     </div>
   );
 };

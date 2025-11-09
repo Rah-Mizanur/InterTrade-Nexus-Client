@@ -21,7 +21,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/all-products',
-                element : <AllProducts></AllProducts>
+                element : <AllProducts></AllProducts>,
+                loader : ()=> fetch('http://localhost:3000/all-products')
+
             },
             {
                 path:'/my-imports',

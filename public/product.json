@@ -1,0 +1,102 @@
+[
+  {
+    "productImage": "https://i.ibb.co.com/ymPQtzNk/OIP.webp",
+    "productName": "Wireless Bluetooth Headphones",
+    "price": 59.99,
+    "originCountry": "Japan",
+    "rating": 4.6,
+    "availableQuantity": 120,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/2YCch9Kp/Fitness-watch.webp",
+    "productName": "Smart Fitness Watch",
+    "price": 89.99,
+    "originCountry": "China",
+    "rating": 4.3,
+    "availableQuantity": 200,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-02-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/yF5hFJw3/Classic-sunglass.webp",
+    "productName": "Classic Sunglasses",
+    "price": 29.5,
+    "originCountry": "Italy",
+    "rating": 4.8,
+    "availableQuantity": 75,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-03-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/tTQQrs2R/Leather-wallet.jpg",
+    "productName": "Leather Wallet",
+    "price": 35.0,
+    "originCountry": "India",
+    "rating": 4.5,
+    "availableQuantity": 150,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-04-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/mCnRQWLq/eirburds.webp",
+    "productName": "Noise Cancelling Earbuds",
+    "price": 79.99,
+    "originCountry": "South Korea",
+    "rating": 4.7,
+    "availableQuantity": 90,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-05-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/q3xQH2vt/DSLR.webp",
+    "productName": "DSLR Camera",
+    "price": 499.99,
+    "originCountry": "Germany",
+    "rating": 4.9,
+    "availableQuantity": 45,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-06-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/twKMFvjJ/Bluetooth-Speaker.webp",
+    "productName": "Portable Bluetooth Speaker",
+    "price": 49.99,
+    "originCountry": "United States",
+    "rating": 4.4,
+    "availableQuantity": 220,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-07-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/TD8wbvtP/Mechanical-keyboard.webp",
+    "productName": "Mechanical Keyboard",
+    "price": 79.5,
+    "originCountry": "Taiwan",
+    "rating": 4.8,
+    "availableQuantity": 60,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-08-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/bMkybspP/Gaming-Mouse.webp",
+    "productName": "Gaming Mouse",
+    "price": 39.99,
+    "originCountry": "Malaysia",
+    "rating": 4.6,
+    "availableQuantity": 180,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-09-01T10:00:00Z"
+  },
+  {
+    "productImage": "https://i.ibb.co.com/pkYxCVN/4k-smart-TV.webp",
+    "productName": "4K Smart TV",
+    "price": 699.0,
+    "originCountry": "USA",
+    "rating": 4.9,
+    "availableQuantity": 25,
+    "exportedBy": "shopdata@example.com",
+    "createdAt": "2024-10-01T10:00:00Z"
+  }
+]
