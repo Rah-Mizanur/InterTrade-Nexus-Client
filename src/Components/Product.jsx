@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
 
 const Product = ({product}) => {
+    const navigate = useNavigate()
+
+    const handleSeeDetails =()=>{
+        navigate('/product-details/:id')
+           navigate(`/product-details/${product._id}`,{state : product});
+    }
   return (
      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 max-w-xs">
       <img
@@ -25,7 +32,7 @@ const Product = ({product}) => {
         <p className="text-gray-700">Available: {product.availableQuantity}</p>
 
  
-        <button className="w-full bg-accent text-white py-2 rounded hover:bg-secondary transition-colors duration-200">
+        <button onClick={handleSeeDetails} className="w-full bg-accent text-white py-2 rounded hover:bg-secondary transition-colors duration-200">
           See Details
         </button>
       </div>
