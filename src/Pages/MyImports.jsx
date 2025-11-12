@@ -29,8 +29,8 @@ const MyImports = () => {
             <h1 className="my-8 text-center text-2xl"> My Products </h1>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {
-            products.map((product) => (
-              <ImportProduct key={product._id} product={product}>
+            products.map((products) => (
+              <ImportProduct key={products._id} products={products}>
                 {" "}
               </ImportProduct>
             ))}

@@ -5,11 +5,10 @@ const Product = ({product}) => {
     const navigate = useNavigate()
 
     const handleSeeDetails =()=>{
-        navigate('/product-details/:id')
            navigate(`/product-details/${product._id}`,{state : product});
     }
   return (
-     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 max-w-xs">
+     <div className="bg-white w-80 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 max-w-xs">
       <img
         src={product.productImage}
         alt={product.productName}

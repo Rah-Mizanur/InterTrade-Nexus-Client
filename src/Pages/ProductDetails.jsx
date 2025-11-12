@@ -29,6 +29,7 @@ const ProductDetails = () => {
     const number = e.target.number.value;
     const updatedQuantity = product.availableQuantity - number;
     const importData = {
+      id : product._id ,
       productImage: product.productImage,
       productName: product.productName,
       price: product.price,
@@ -40,7 +41,7 @@ const ProductDetails = () => {
     };
 
     if(updatedQuantity < 0){
-        return toast('Not Available')
+        return toast('Product Not Available')
     }
 
     fetch("http://localhost:3000/import", {

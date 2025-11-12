@@ -1,13 +1,52 @@
-import React from "react";
+import React, { use } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import { useNavigate } from "react-router";
+import { toast, ToastContainer } from "react-toastify";
 
 const AddExport = () => {
+const {user} = use(AuthContext)
+const navigate = useNavigate()
+const handleExport =(e)=>{
+  
+  e.preventDefault();
+  const formData = {
+    productImage : e.target.productImage.value,
+    productName : e.target.productName.value,
+    price : e.target.price.value,
+    originCountry : e.target.originCountry.value,
+    rating : e.target.rating.value ,
+    availableQuantity : e.target.availableQuantity.value,
+    exportedBy : user.email ,
+    createdAt :new Date(),
+  }
+
+  console.log(formData)
+
+  fetch("http://localhost:3000/add-export", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast("add model succesfully");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+}
+
   return (
     <div className="w-11/12 mx-auto my-10">
-        <h1 className="uppercase text-accent font-bold text-3xl my-6 text-center">
-            Exports your Product 
-        </h1>
-      <form className="max-w-md mx-auto p-4 border rounded shadow space-y-4">
-        {/* a. Product Name */}
+      <ToastContainer></ToastContainer>
+      <h1 className="uppercase text-accent font-bold text-3xl my-6 text-center">
+        Exports your Product
+      </h1>
+      <form onSubmit={handleExport} className="max-w-md mx-auto p-4 border rounded shadow space-y-4">
         <div>
           <label className="block font-bold">Product Name</label>
           <input
@@ -18,7 +57,6 @@ const AddExport = () => {
           />
         </div>
 
-        {/* b. Product Image */}
         <div>
           <label className="block font-bold">Product Image URL</label>
           <input
@@ -35,7 +73,7 @@ const AddExport = () => {
             type="number"
             name="price"
             className="input input-bordered w-full"
-            min="30"
+            min="10"
             step="0.01"
             required
           />
@@ -73,7 +111,7 @@ const AddExport = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-secondary w-full mt-4">
+        <button  type="submit" className="btn btn-secondary w-full mt-4">
           Export Product
         </button>
       </form>
