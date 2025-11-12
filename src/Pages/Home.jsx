@@ -9,7 +9,6 @@ const Home = () => {
   const products = useLoaderData();
 
   return (
-
     <div className="w-11/12 mx-auto">
       <title> InterTrade || Home</title>
       <Banner></Banner>
