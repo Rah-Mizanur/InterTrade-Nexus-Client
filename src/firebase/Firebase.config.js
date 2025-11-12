@@ -5,12 +5,17 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAT-MlRrvl8JtIbxlmu7t8i9i0DhVwzBU0",
-  authDomain: "intertrade-nexus.firebaseapp.com",
-  projectId: "intertrade-nexus",
-  storageBucket: "intertrade-nexus.firebasestorage.app",
-  messagingSenderId: "622114741945",
-  appId: "1:622114741945:web:b7179dacd76b7a3439c568"
+  apiKey:import.meta.env.VITE_apiKey,
+
+  authDomain: import.meta.env.VITE_authDomain,
+
+  projectId: import.meta.env.VITE_projectId ,
+
+  storageBucket: import.meta.env.VITE_storageBucket,
+
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

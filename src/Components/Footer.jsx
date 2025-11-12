@@ -1,19 +1,20 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-accent my-8" >
+      <footer className="bg-accent mt-8 dark:bg-gray-900" >
         <div className="footer sm:footer-horizontal  text-base-content p-10 items-center justify-items-center">
 
         <nav>
           <h6 className="footer-title">Quick links</h6>
-          <Link to='/about-us' className="link link-hover">About us</Link>
-          <Link to='/contact' className="link link-hover">Contact</Link>
+          <Link  className="link link-hover">About us</Link>
+          <Link  className="link link-hover">Contact</Link>
         
-          <Link to='/privacy-policy' className="link link-hover">Privacy Policy</Link>
+          <Link  className="link link-hover">Privacy Policy</Link>
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>
@@ -25,7 +26,7 @@ const Footer = () => {
               <FaInstagram></FaInstagram>
             </a>
             <a target="blank" className="text-2xl">
-              <FaLinkedin></FaLinkedin>
+            <FaX></FaX>
             </a>
           </div>
         </nav>

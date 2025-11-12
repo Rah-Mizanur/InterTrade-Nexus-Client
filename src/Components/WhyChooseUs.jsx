@@ -27,12 +27,12 @@ const WhyChooseUs = () => {
     
 
   return (
-    <section className="py-20 bg-gray-100 px-6">
+    <section className="py-20 px-6">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold text-accent">
           Why Choose Intertrade Nexus
         </h2>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+        <p className="text-secondary mt-4 max-w-2xl mx-auto">
           We provide reliable, scalable, and global solutions that empower your business to succeed.
         </p>
       </div>

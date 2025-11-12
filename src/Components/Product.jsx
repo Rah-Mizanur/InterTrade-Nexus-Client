@@ -18,7 +18,7 @@ const Product = ({product}) => {
   
       <div className="p-4 space-y-2">
    
-        <h2 className="text-lg font-semibold">{product.productName}</h2>
+        <h2 className="text-lg font-semibold text-accent">{product.productName}</h2>
 
         <p className="text-green-600 font-bold">${product.price}</p>
 

@@ -42,6 +42,7 @@ const handleExport =(e)=>{
 
   return (
     <div className="w-11/12 mx-auto my-10">
+      <title>Export Your Product || InterTrade</title>
       <ToastContainer></ToastContainer>
       <h1 className="uppercase text-accent font-bold text-3xl my-6 text-center">
         Exports your Product

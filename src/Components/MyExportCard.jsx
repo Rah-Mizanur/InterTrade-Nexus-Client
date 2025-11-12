@@ -66,7 +66,7 @@ const MyExportCard = ({ products }) => {
   return (
     <div>
     <ToastContainer></ToastContainer>
-      <div className=" w-full bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+      <div className=" w-80 bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
         <img
           src={productImage}
           alt={productName}
@@ -114,10 +114,10 @@ const MyExportCard = ({ products }) => {
 
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg w-96 shadow-xl relative">
+          <div className="bg-accent p-6 rounded-lg w-96 shadow-xl relative">
             <h2 className="text-lg font-semibold mb-4">Update Product</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3 text-secondary">
               <input
                 type="text"
                 name="productName"

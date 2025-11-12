@@ -19,7 +19,7 @@ const Banner = () => {
         <p className="text-lg md:text-xl text-secondary mx-auto mb-8">
           At Intertrade Nexus, we deliver reliable, on-demand solutions that keep your business moving forward.
         </p>
-        <Link to='/all-products' className="bg-accent hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300">
+        <Link to='/all-products' className="bg-accent hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300">
           Show Products
         </Link>
       </div>

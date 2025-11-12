@@ -27,12 +27,12 @@ const Services = () => {
 
 
   return (
-    <section className="py-20 bg-gray-50 px-6">
+    <section className="py-20  px-6 ">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold text-accent">
           Our Services
         </h2>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+        <p className="text-secondary mt-4 max-w-2xl mx-auto">
           Intertrade Nexus provides solutions that help your business thrive globally. Explore our core services below.
         </p>
       </div>
