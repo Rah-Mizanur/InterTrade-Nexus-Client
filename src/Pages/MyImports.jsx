@@ -9,7 +9,7 @@ const MyImports = () => {
       const [loading,setLoading]= useState(true)
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/my-imports?email=${user.email}`,{
+        fetch(`https://intertrade-nexus-server.vercel.app/my-imports?email=${user.email}`,{
             headers :{
                 authorization : `Bearer ${user.accessToken}`
             }

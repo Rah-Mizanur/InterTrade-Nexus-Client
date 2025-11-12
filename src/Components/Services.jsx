@@ -1,30 +1,25 @@
 import React, { useEffect, useState } from "react";
 
-
-
 const Services = () => {
-
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   
-    fetch("http://localhost:3000/service")
-      .then(res => res.json())
-      .then(data => {
+    fetch("https://intertrade-nexus-server.vercel.app/service")
+      .then((res) => res.json())
+      .then((data) => {
         setServices(data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("Error fetching services:", err);
         setLoading(false);
       });
-  }, []); 
+  }, []);
 
   if (loading) {
     return <h1>Loading services...</h1>;
   }
-
 
   return (
     <section className="py-20  px-6 ">
@@ -33,7 +28,8 @@ const Services = () => {
           Our Services
         </h2>
         <p className="text-secondary mt-4 max-w-2xl mx-auto">
-          Intertrade Nexus provides solutions that help your business thrive globally. Explore our core services below.
+          Intertrade Nexus provides solutions that help your business thrive
+          globally. Explore our core services below.
         </p>
       </div>
 

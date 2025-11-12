@@ -1,47 +1,46 @@
-
 import React, { use, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 
+const ImportProduct = ({ products }) => {
+  const { user } = use(AuthContext);
+  const navigate = useNavigate();
+  const [data, setData] = useState(null);
+  const id = products.id;
 
-const ImportProduct = ({products }) => {
-  const {user} = use(AuthContext)
-const navigate = useNavigate()
- const [data, setData] = useState(null);
- const id = products.id
-
-//  const {product} = data
-   useEffect(() => {
-    fetch(`http://localhost:3000/all-product/${id}`,{
-      headers :{
-              authorization : `Bearer ${user.accessToken}`
-            }
+  //  const {product} = data
+  useEffect(() => {
+    fetch(`https://intertrade-nexus-server.vercel.app/all-product/${id}`, {
+      headers: {
+        authorization: `Bearer ${user.accessToken}`,
+      },
     })
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.error(err));
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error(err));
   }, []);
 
-
-
-  const handleRemove=()=>{
-         fetch(`http://localhost:3000/import-product/${products._id}`,{
-        method:"DELETE",
-        headers:{
-            "Content-Type":"application/json",
+  const handleRemove = () => {
+    fetch(
+      `https://intertrade-nexus-server.vercel.app/import-product/${products._id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
         },
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data)
-      navigate('/')
-    })
-    .catch(err=> console.log(err))
-  }
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
 
-  const handleDetails=()=>{
-     navigate(`/product-details/${products.id}`,{state : data});
-  }
+  const handleDetails = () => {
+    navigate(`/product-details/${products.id}`, { state: data });
+  };
   return (
     <div className="w-90 mt-4 p-4 border rounded shadow flex flex-col md:flex-row items-center gap-4">
       <img
@@ -68,9 +67,13 @@ const navigate = useNavigate()
         </p>
 
         <div className="flex gap-2 mt-2">
-          <button onClick={handleRemove} className="btn btn-red">Remove</button>
+          <button onClick={handleRemove} className="btn btn-red">
+            Remove
+          </button>
 
-          <button onClick={handleDetails} className="btn btn-blue">See Details</button>
+          <button onClick={handleDetails} className="btn btn-blue">
+            See Details
+          </button>
         </div>
       </div>
     </div>

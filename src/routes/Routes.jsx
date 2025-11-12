@@ -12,56 +12,64 @@ import Register from "../Pages/Register";
 import PrivateRoute from "../Pages/PrivateRoute";
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element : <Root> </Root>,
-        children:[
-            {
-                index: true ,
-                element : <Home></Home>,
-                loader : ()=> fetch('http://localhost:3000/latest-products')
+  {
+    path: "/",
+    element: <Root> </Root>,
+    children: [
+      {
+        index: true,
+        element: <Home></Home>,
+        loader: () =>
+          fetch("https://intertrade-nexus-server.vercel.app/latest-products"),
+      },
+      {
+        path: "/all-products",
+        element: <AllProducts></AllProducts>,
+        loader: () =>
+          fetch("https://intertrade-nexus-server.vercel.app/all-products"),
+      },
+      {
+        path: "/my-imports",
+        element: (
+          <PrivateRoute>
+            <MyImports></MyImports>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-exports",
+        element: (
+          <PrivateRoute>
+            <MyExports></MyExports>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/add-export",
+        element: (
+          <PrivateRoute>
+            <AddExport></AddExport>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/product-details/:id",
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+]);
 
-            },
-            {
-                path: '/all-products',
-                element : <AllProducts></AllProducts>,
-                loader : ()=> fetch('http://localhost:3000/all-products')
-
-            },
-            {
-                path:'/my-imports',
-                element : <PrivateRoute>
-                       <MyImports></MyImports>
-                </PrivateRoute>
-            },
-            {
-                path:'/my-exports',
-                element : <PrivateRoute>
-                    <MyExports></MyExports>
-                </PrivateRoute>
-            },
-            {
-                path:'/add-export',
-                element : <PrivateRoute>
-                    <AddExport></AddExport>
-                </PrivateRoute>
-            },
-            {
-                path: '/product-details/:id',
-                element: <PrivateRoute>
-                    <ProductDetails></ProductDetails>
-                </PrivateRoute>
-            },
-            {
-                path :'/login',
-                element : <Login></Login>
-            },
-            {
-                path :"/register",
-                element: <Register></Register>
-            }
-        ]
-    }
-])
-
-export default router
+export default router;

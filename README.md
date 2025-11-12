@@ -1,16 +1,20 @@
-# React + Vite
+# InterTrade Nexus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:**  https://intertrade-nexus.web.app/
 
-Currently, two official plugins are available:
+## Project Overview
+InterTrade Nexus is a modern web application for managing and trading products. It allows users to browse, import, and manage products with a sleek, responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Browse Latest Products:** View the most recently added products with details like price, origin, and rating.  
+- **Product Import Management:** Securely import products and track quantities with user authentication.  
+- **User Authentication:** Sign up and log in securely to access personalized features.  
+- **Responsive Design:** Fully responsive layout that works on desktop, tablet, and mobile.  
+- **MongoDB Integration:** Data stored and managed efficiently using MongoDB Atlas.  
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+- React.js (Frontend)  
+- Node.js + Express.js (Backend)  
+- MongoDB Atlas (Database)  
+- Firebase Authentication  
+- Tailwind CSS for styling 

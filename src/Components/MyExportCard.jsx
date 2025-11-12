@@ -32,29 +32,35 @@ const MyExportCard = ({ products }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedAt = new Date();
-    fetch(`http://localhost:3000/my-export-update/${products._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({...formData , updated_At :updatedAt}),
-    })
+    fetch(
+      `https://intertrade-nexus-server.vercel.app/my-export-update/${products._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, updated_At: updatedAt }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        toast('Export Item Updated')
+        toast("Export Item Updated");
         setIsModalOpen(false);
-        navigate('/')
+        navigate("/");
       })
       .catch((err) => console.log(err));
   };
 
   const handleDelete = () => {
-    fetch(`http://localhost:3000/my-export/${products._id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      `https://intertrade-nexus-server.vercel.app/my-export/${products._id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -65,7 +71,7 @@ const MyExportCard = ({ products }) => {
 
   return (
     <div>
-    <ToastContainer></ToastContainer>
+      <ToastContainer></ToastContainer>
       <div className=" w-80 bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
         <img
           src={productImage}

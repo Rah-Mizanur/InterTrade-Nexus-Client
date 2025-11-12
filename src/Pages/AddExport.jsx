@@ -4,25 +4,24 @@ import { useNavigate } from "react-router";
 import { toast, ToastContainer } from "react-toastify";
 
 const AddExport = () => {
-const {user} = use(AuthContext)
-const navigate = useNavigate()
-const handleExport =(e)=>{
-  
-  e.preventDefault();
-  const formData = {
-    productImage : e.target.productImage.value,
-    productName : e.target.productName.value,
-    price : e.target.price.value,
-    originCountry : e.target.originCountry.value,
-    rating : e.target.rating.value ,
-    availableQuantity : e.target.availableQuantity.value,
-    exportedBy : user.email ,
-    createdAt :new Date(),
-  }
+  const { user } = use(AuthContext);
+  const navigate = useNavigate();
+  const handleExport = (e) => {
+    e.preventDefault();
+    const formData = {
+      productImage: e.target.productImage.value,
+      productName: e.target.productName.value,
+      price: e.target.price.value,
+      originCountry: e.target.originCountry.value,
+      rating: e.target.rating.value,
+      availableQuantity: e.target.availableQuantity.value,
+      exportedBy: user.email,
+      createdAt: new Date(),
+    };
 
-  console.log(formData)
+    console.log(formData);
 
-  fetch("http://localhost:3000/add-export", {
+    fetch("https://intertrade-nexus-server.vercel.app/add-export", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,14 +30,14 @@ const handleExport =(e)=>{
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         toast("add model succesfully");
         navigate("/");
       })
       .catch((err) => {
         console.log(err);
       });
-}
+  };
 
   return (
     <div className="w-11/12 mx-auto my-10">
@@ -47,7 +46,10 @@ const handleExport =(e)=>{
       <h1 className="uppercase text-accent font-bold text-3xl my-6 text-center">
         Exports your Product
       </h1>
-      <form onSubmit={handleExport} className="max-w-md mx-auto p-4 border rounded shadow space-y-4">
+      <form
+        onSubmit={handleExport}
+        className="max-w-md mx-auto p-4 border rounded shadow space-y-4"
+      >
         <div>
           <label className="block font-bold">Product Name</label>
           <input
@@ -112,7 +114,7 @@ const handleExport =(e)=>{
             required
           />
         </div>
-        <button  type="submit" className="btn btn-secondary w-full mt-4">
+        <button type="submit" className="btn btn-secondary w-full mt-4">
           Export Product
         </button>
       </form>

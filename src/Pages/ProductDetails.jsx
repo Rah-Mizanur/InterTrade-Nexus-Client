@@ -8,11 +8,11 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
-  const [quantity, setQuantity] = useState(""); 
+  const [quantity, setQuantity] = useState("");
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/all-products/${id}`, {
+    fetch(`https://intertrade-nexus-server.vercel.app/all-products/${id}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },
@@ -24,7 +24,6 @@ const ProductDetails = () => {
       });
   }, [id, user.accessToken]);
 
- 
   const handleChange = (e) => {
     const value = e.target.value;
     setQuantity(value);
@@ -51,7 +50,7 @@ const ProductDetails = () => {
       return toast("Product Not Available");
     }
 
-    fetch("http://localhost:3000/import", {
+    fetch("https://intertrade-nexus-server.vercel.app/import", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +59,7 @@ const ProductDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        fetch(`http://localhost:3000/import/${id}`, {
+        fetch(`https://intertrade-nexus-server.vercel.app/import/${id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ availableQuantity: updatedQuantity }),
@@ -91,7 +90,8 @@ const ProductDetails = () => {
               Price: ${product.price}
             </p>
             <p className="text-gray-700">
-              Origin Country: <span className="font-medium">{product.originCountry}</span>
+              Origin Country:{" "}
+              <span className="font-medium">{product.originCountry}</span>
             </p>
             <p className="text-yellow-500">
               Rating: <span className="font-medium">{product.rating} ⭐</span>
@@ -101,7 +101,8 @@ const ProductDetails = () => {
               <span className="font-medium">{product.availableQuantity}</span>
             </p>
             <p className="text-gray-700">
-              Exported By: <span className="font-medium">{product.exportedBy}</span>
+              Exported By:{" "}
+              <span className="font-medium">{product.exportedBy}</span>
             </p>
             <p className="text-gray-500 text-sm">
               Created At: {new Date(product.createdAt).toLocaleDateString()}
