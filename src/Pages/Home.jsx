@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router";
 import Product from "../Components/Product";
 import Banner from "../Components/Banner";
 import Services from "../Components/Services";
+import WhyChooseUs from "../Components/WhyChooseUs";
 
 const Home = () => {
   const products = useLoaderData();
@@ -23,6 +24,7 @@ const Home = () => {
         <Link to='/all-products' className="btn btn-accent  w-30 Capitalize"> see all</Link>
       </div>
       <Services></Services>
+      <WhyChooseUs></WhyChooseUs>
     </div>
   );
 };
