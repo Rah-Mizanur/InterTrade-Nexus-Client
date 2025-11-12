@@ -32,9 +32,9 @@ const ProductDetails = () => {
 
   const handleImport = (e) => {
     e.preventDefault();
-    const number = parseInt(quantity);
+    const number = Number(quantity);
 
-    const updatedQuantity = product.availableQuantity - number;
+    const updatedQuantity = Number(product.availableQuantity - number);
     const importData = {
       id: product._id,
       productImage: product.productImage,
