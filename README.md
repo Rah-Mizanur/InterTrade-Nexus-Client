@@ -17,4 +17,19 @@ InterTrade Nexus is a modern web application for managing and trading products. 
 - Node.js + Express.js (Backend)  
 - MongoDB Atlas (Database)  
 - Firebase Authentication  
-- Tailwind CSS for styling 
+- Tailwind CSS for styling
+
+## 💻 How to Run Locally
+```bash
+# Clone the repository
+git clone <repo-link>
+
+# Install dependencies for frontend
+cd client
+npm install
+npm start
+
+# Install dependencies for backend
+cd ../server
+npm install
+npm run dev
