@@ -2,83 +2,86 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import Profile from "./Profile";
 import { Menu } from "lucide-react";
-import { FaGear } from "react-icons/fa6";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "light"
+  );
 
   useEffect(() => {
-    const html = document.querySelector("html");
-    html.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   const handleTheme = (checked) => {
     setTheme(checked ? "dark" : "light");
   };
+
+  const navLinkStyle = ({ isActive }) =>
+    `px-3 py-2 rounded-lg font-medium transition-colors duration-200
+     ${
+       isActive
+         ? "text-accent bg-accent/10"
+         : "text-base-content hover:text-accent hover:bg-base-200"
+     }`;
+
   return (
-    <div className="navbar flex justify-between w-11/12 mx-auto bg-base-100 shadow-sm">
-      <div className="">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <Menu></Menu>
+    <header className="sticky top-0 z-50 bg-base-100 shadow-sm">
+      <div className="navbar w-11/12 mx-auto">
+        {/* Left */}
+        <div className="navbar-start">
+          {/* Mobile Menu */}
+          <div className="dropdown lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost">
+              <Menu size={22} />
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 w-56 rounded-xl bg-base-100 p-2 shadow"
+            >
+              <li><NavLink to="/" className={navLinkStyle}>Home</NavLink></li>
+              <li><NavLink to="/all-products" className={navLinkStyle}>All Products</NavLink></li>
+              <li><NavLink to="/my-imports" className={navLinkStyle}>My Imports</NavLink></li>
+              <li><NavLink to="/my-exports" className={navLinkStyle}>My Exports</NavLink></li>
+              <li><NavLink to="/add-export" className={navLinkStyle}>Add Export</NavLink></li>
+            </ul>
           </div>
-          <ul
-            tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
-            <li>
-              <NavLink to="/"> Home </NavLink>
-            </li>
-            <li>
-              <NavLink to="/all-products">All Products </NavLink>
-            </li>
-            <li>
-              <NavLink to="/my-imports">My Imports</NavLink>
-            </li>
-            <li>
-              <NavLink to="/my-exports">My Exports</NavLink>
-            </li>
-            <li>
-              <NavLink to="/add-export">Add Export</NavLink>
-            </li>
+
+          {/* Logo */}
+          <Link to="/" className="text-xl font-bold text-accent">
+            Inter<span className="text-base-content">Trade</span>
+          </Link>
+        </div>
+
+        {/* Center (Desktop Nav) */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal items-center gap-1">
+            <li><NavLink to="/" className={navLinkStyle}>Home</NavLink></li>
+            <li><NavLink to="/all-products" className={navLinkStyle}>All Products</NavLink></li>
+            <li><NavLink to="/my-imports" className={navLinkStyle}>My Imports</NavLink></li>
+            <li><NavLink to="/my-exports" className={navLinkStyle}>My Exports</NavLink></li>
+            <li><NavLink to="/add-export" className={navLinkStyle}>Add Export</NavLink></li>
           </ul>
         </div>
-        <Link to="/" className="text-accent text-xl font-bold">
-          Inter<span className="text-secondary">Trade</span>
-        </Link>
-      </div>
-      <div className=" hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 items-center">
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/all-products">All Products </NavLink>
-          </li>
-          <li>
-            <NavLink to="/my-imports">My Imports</NavLink>
-          </li>
-          <li>
-            <NavLink to="/my-exports">My Exports</NavLink>
-          </li>
-          <li>
-            <NavLink to="/add-export">Add Export</NavLink>
-          </li>
-          
 
-          <input
-            onChange={(e) => handleTheme(e.target.checked)}
-            type="checkbox"
-            defaultChecked={localStorage.getItem("theme") === "dark"}
-            className="toggle"
-          />
-        </ul>
+        {/* Right */}
+        <div className="navbar-end gap-4">
+          {/* Theme Toggle */}
+          <label className="flex items-center gap-2 cursor-pointer">
+            <span className="text-sm hidden md:inline">Dark</span>
+            <input
+              type="checkbox"
+              className="toggle toggle-accent"
+              onChange={(e) => handleTheme(e.target.checked)}
+              defaultChecked={theme === "dark"}
+            />
+          </label>
+
+          {/* Profile Menu */}
+          <Profile />
+        </div>
       </div>
-      <div>
-        <Profile></Profile>
-      </div>
-    </div>
+    </header>
   );
 };
 
